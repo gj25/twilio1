@@ -1,0 +1,9 @@
+@(message: String)<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+  <Gather numDigits="1" action="/handleKey" method="POST">
+    <!--Play>welcome.mp3</Play-->
+ 	<Say voice="woman">
+ 	  @message
+ 	</Say>
+  </Gather>
+</Response> 

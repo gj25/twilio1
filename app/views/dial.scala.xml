@@ -1,0 +1,5 @@
+@(phoneNumber: String)<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+  <Dial>@phoneNumber</Dial>
+  <Say voice="woman">Goodbye</Say>
+</Response> 
