@@ -43,21 +43,20 @@ object Application extends Controller {
     val keys = form.get("Digits").getOrElse(List("No Digit")).head.trim
     Logger.info("handling key entry from: " + from + ", keys:" + keys)
     
-    val response = 
-      if(keys == "1") {
+    keys match {
+      case "1" => {
         Logger.info("dialing..." + defaultNumber)
-        dial(defaultNumber)
+        dial(defaultNumber)        
       }
-      else if (keys == "2") {
+      case "2" => {
         Logger.info("recording a message")
-        record(recordMessage)
+        record(recordMessage)       
       }
-      else {
+      case _ => {
         Logger.info("hanging up")
-        hangup
+        hangup       
       }
-      
-    response
+    }
   }
   
   private def dial(to: String) = Ok(views.xml.dial(to)).as("application/xml")
